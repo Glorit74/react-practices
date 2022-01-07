@@ -6,7 +6,7 @@ const ButtonList = () => {
     return (
         <ul>
             {elements.map((value, index) => {
-                return <li key={index}>{value}<MyButton onClick='onClick' buttonText="Click me"/></li>
+                return <li key={index}><MyButton text={`${value} Click me`}/></li>
             })}
         </ul>
     )

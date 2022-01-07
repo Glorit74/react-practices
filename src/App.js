@@ -28,18 +28,18 @@ color:'blue'}
 const buttonText = "Click for a new div"
 
 
-const onClick = () => {
-console.log('Component button')
+const onClickChange = () => {
+  let value = document.querySelector('.btn').innerHTML = 'You clicked me';
+  console.log(value);
+  if (value === 'You clicked me') console.log('stop');
 }
-const changeText = () => {
-  // console.log(document.querySelector('.myButton'))
-  return document.querySelector('.myButton').innerHTML='Click for a new div'
-  //ide hogyan lehet a buttonTextet beemelni?????
-}
+const changeText = () =>
+  document.querySelector('.myButton').innerHTML=buttonText
 
-const changeBackText = () => {
-    return document.querySelector('.myButton').innerHTML='Thats all'
-  }
+
+const changeBackText = () => 
+   document.querySelector('.myButton').innerHTML='Thats all'
+
 
   const deleteTask = (id) => {
     console.log('delete', id)
@@ -58,7 +58,7 @@ const changeBackText = () => {
   }
   return (
     <div className="App">
-
+      <Button buttonText='Click me' onClick={onClickChange}/>
       <MyButton text={buttonText} />
       <p>This is my first sentence</p>
       <ButtonList />
